@@ -31,7 +31,6 @@ function print_stats(argv) {
   //let [ instID, metricName = 'CPUUtilization', ns = 'AWS/EC2'] = argv._;  // flow doesn't support
   var instIDs = argv._[0];
   //console.log(instIDs)
-  process.stderr.write("Isntance ID"+instIDs);
   var metricName = argv._[1] || "CPUUtilization";
   var ns = argv._[2] || "AWS/EC2";
   var dimName = (0, _metrics.nsToDimName)(ns);

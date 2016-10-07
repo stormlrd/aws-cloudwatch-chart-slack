@@ -94,10 +94,6 @@ function ls_ec2(f) {
 
 if (require.main === module) {
   var argv = (0, _minimist2.default)(process.argv.slice(2));
-//      aws.config.accessKeyId     = process.env.HUBOT_AWS_ACCESS_KEY_ID
-//    aws.config.secretAccessKey = process.env.HUBOT_AWS_SECRET_ACCESS_KEY
-//    aws.config.region          = process.env.HUBOT_AWS_REGION
-//    aws.config.update({accessKeyId: aws.config.accessKeyId, secretAccessKey: aws.config.secretAccessKey});
 
   _awsSdk2.default.config.update({ accessKeyId: process.env.HUBOT_AWS_ACCESS_KEY_ID, secretAccessKey: process.env.HUBOT_AWS_SECRET_ACCESS_KEY, region: argv.region || process.env.HUBOT_AWS_REGION || "ap-northeast-1" });
   describe_instances(tag_string_to_filters(argv._[0])).then(function (r) {

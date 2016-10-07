@@ -10,8 +10,8 @@ function upload(channel, path) {
     var form = new FormData();
     form.append("channels", channel);
     form.append("token", process.env.HUBOT_SLACK_API_TOKEN);
-    console.log("token to use:"+ process.env.HUBOT_SLACK_API_TOKEN)
-    console.log("path to use:" + path)
+    //console.log("token to use:"+ process.env.HUBOT_SLACK_API_TOKEN)
+    //console.log("path to use:" + path)
     //form.append("file", fs.createReadStream(path));  //NOTE: This became to fail somehow suddenly... https://github.com/form-data/form-data#notes
     var buf = fs.readFileSync(path);
     form.append("file", buf, {
