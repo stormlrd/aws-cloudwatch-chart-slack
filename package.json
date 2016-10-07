@@ -1,56 +1,140 @@
 {
-  "name": "aws-cloudwatch-chart-slack",
-  "version": "0.1.2",
+  "_args": [
+    [
+      {
+        "raw": "aws-cloudwatch-chart-slack",
+        "scope": null,
+        "escapedName": "aws-cloudwatch-chart-slack",
+        "name": "aws-cloudwatch-chart-slack",
+        "rawSpec": "",
+        "spec": "latest",
+        "type": "tag"
+      },
+      "/Users/stormlrd/dev/chatbots/hubot/hubot-test"
+    ]
+  ],
+  "_from": "aws-cloudwatch-chart-slack@latest",
+  "_id": "aws-cloudwatch-chart-slack@0.1.2",
+  "_inCache": true,
+  "_installable": true,
+  "_location": "/aws-cloudwatch-chart-slack",
+  "_nodeVersion": "6.7.0",
+  "_npmOperationalInternal": {
+    "host": "packages-5-east.internal.npmjs.com",
+    "tmp": "tmp/aws-cloudwatch-chart-slack-0.1.2.tgz_1455968143519_0.5744212500285357"
+  },
+  "_npmUser": {
+    "name": "stormlrd",
+    "email": "stormlrd@gmail.com"
+  },
+  "_npmVersion": "3.10.8",
+  "_phantomChildren": {
+    "buffer": "5.0.0",
+    "crypto-browserify": "3.11.0",
+    "jmespath": "0.15.0",
+    "lodash": "4.16.3",
+    "querystring": "0.2.0",
+    "url": "0.11.0"
+  },
+  "_requested": {
+    "raw": "aws-cloudwatch-chart-slack",
+    "scope": null,
+    "escapedName": "aws-cloudwatch-chart-slack",
+    "name": "aws-cloudwatch-chart-slack",
+    "rawSpec": "",
+    "spec": "latest",
+    "type": "tag"
+  },
+  "_requiredBy": [
+    "#USER"
+  ],
+  "_resolved": "https://registry.npmjs.org/aws-cloudwatch-chart-slack/-/aws-cloudwatch-chart-slack-0.1.2.tgz",
+  "_shasum": "f4d2414751492741f31a6fe8e2875b49bb785344",
+  "_shrinkwrap": null,
+  "_spec": "aws-cloudwatch-chart-slack",
+  "_where": "/Users/stormlrd/dev/chatbots/hubot/hubot-test",
+  "author": {
+    "name": "tmtk75"
+  },
+  "bin": {
+    "ls-dynamodb-tables": "bin/ls-dynamodb-tables",
+    "ls-ec2": "bin/ls-ec2",
+    "ls-rds": "bin/ls-rds",
+    "slack-cloudwatch-chart": "bin/slack-cloudwatch-chart"
+  },
+  "bugs": {
+    "url": "https://github.com/tmtk75/aws-cloudwatch-chart-slack/issues"
+  },
+  "dependencies": {
+    "aws-sdk": "^2.6.6",
+    "c3": "^0.4.11",
+    "form-data": "^2.1.1",
+    "immutable": "^3.8.1",
+    "minimist": "^1.2.0",
+    "moment": "^2.15.1",
+    "node-fetch": "^1.6.3",
+    "phantomjs-prebuilt": "^2.1.1"
+  },
   "description": "Chart Renderer for AWS CloudWatch Datapoints and Uploader to Slack",
-  "keywords": ["AWS", "CloudWatch", "chart", "upload", "Slack"],
-  "main": "index.js",
+
+  "directories": {
+    "bin": "./bin"
+  },
+  "dist": {
+    "shasum": "f4d2414751492741f31a6fe8e2875b49bb785344",
+    "tarball": "https://registry.npmjs.org/aws-cloudwatch-chart-slack/-/aws-cloudwatch-chart-slack-0.1.2.tgz"
+  },
   "engines": {
     "node": ">=0.12",
     "npm": "~2"
   },
-  "scripts": {
-    "build": "gulp compile",
-    "test": "BABEL_ENV=test mocha --require babel-core/register --recursive",
-    "lint": "gulp eslint",
-    "typecheck": "flow check"
-  },
-  "author": "tmtk75",
+  "gitHead": "7762b695f443274ac63401bec82dc8e750971ab2",
+  "homepage": "https://github.com/tmtk75/aws-cloudwatch-chart-slack#readme",
+  "keywords": [
+    "AWS",
+    "CloudWatch",
+    "chart",
+    "upload",
+    "Slack"
+  ],
   "license": "MIT",
-  "dependencies": {
-    "aws-sdk": "^2.2.30",
-    "c3": "^0.4.11-rc4",
-    "form-data": "^1.0.0-rc4",
-    "immutable": "^3.7.6",
-    "minimist": "^1.2.0",
-    "moment": "^2.11.1",
-    "node-fetch": "^1.3.3",
-    "phantomjs": "^1.9.19"
-  },
-  "devDependencies": {
-    "babel-core": "^6.3.21",
-    "babel-eslint": "^5.0.0-beta6",
-    "babel-loader": "^6.2.0",
-    "babel-plugin-espower": "^2.1.0",
-    "babel-plugin-transform-flow-strip-types": "^6.4.0",
-    "babel-preset-es2015": "^6.3.13",
-    "babel-preset-stage-0": "^6.3.13",
-    "eslint": "^1.10.3",
-    "eslint-plugin-babel": "^3.0.0",
-    "gulp": "^3.9.0",
-    "gulp-babel": "^6.1.1",
-    "gulp-env": "^0.4.0",
-    "gulp-eslint": "^1.1.1",
-    "gulp-mocha": "^2.2.0",
-    "gulp-uglify": "^1.5.1",
-    "gulp-util": "^3.0.7",
-    "mocha": "^2.3.4",
-    "power-assert": "^1.2.0"
-  },
-  "directories": {
-    "bin": "./bin"
-  },
+  "main": "index.js",
+  "maintainers": [
+    {
+      "name": "tsakuma",
+      "email": "npm.tmtk75@gmail.com"
+    }
+  ],
+  "name": "aws-cloudwatch-chart-slack",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
   "repository": {
     "type": "git",
-    "url": "https://github.com/tmtk75/aws-cloudwatch-chart-slack"
-  }
+    "url": "git+https://github.com/tmtk75/aws-cloudwatch-chart-slack.git"
+  },
+  "scripts": {
+    "build": "gulp compile",
+    "lint": "gulp eslint",
+    "test": "BABEL_ENV=test mocha --require babel-core/register --recursive",
+    "typecheck": "flow check"
+  },
+  "version": "0.1.2",
+  "warnings": [
+    {
+      "code": "ENOTSUP",
+      "required": {
+        "node": ">=0.12",
+        "npm": "~2"
+      },
+      "pkgid": "aws-cloudwatch-chart-slack@0.1.2"
+    },
+    {
+      "code": "ENOTSUP",
+      "required": {
+        "node": ">=0.12",
+        "npm": "~2"
+      },
+      "pkgid": "aws-cloudwatch-chart-slack@0.1.2"
+    }
+  ]
 }

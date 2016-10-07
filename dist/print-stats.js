@@ -27,22 +27,26 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 function print_stats(argv) {
+  //console.log(argv)
   //let [ instID, metricName = 'CPUUtilization', ns = 'AWS/EC2'] = argv._;  // flow doesn't support
   var instIDs = argv._[0];
+  //console.log(instIDs)
+  process.stderr.write("Isntance ID"+instIDs);
   var metricName = argv._[1] || "CPUUtilization";
   var ns = argv._[2] || "AWS/EC2";
   var dimName = (0, _metrics.nsToDimName)(ns);
-  var region = argv.region || process.env.AWS_DEFAULT_REGION || "ap-northeast-1";
+  var region = argv.region || process.env.HUBOT_AWS_REGION || "ap-northeast-1";
   var period = (0, _time.toSeconds)(argv.period || "30minutes");
   var stats = argv.statistics;
 
   if (!instIDs) {
     //throw new Error("instanceID is missing")
-    return Promise.reject(new Error("InstanceId is missing"));
+    return Promise.reject(new Error("InstanceId is missing (from:print-stats.js): "+instIDs));
   }
 
-  _awsSdk2.default.config.update({ region: region });
-
+ //_awsSdk2.default.config.update({ region: region });
+ _awsSdk2.default.config.update({ region: region, accessKeyId: process.env.HUBOT_AWS_ACCESS_KEY_ID, secretAccessKey: process.env.HUBOT_AWS_SECRET_ACCESS_KEY });
+ 
   var watch = function watch(instanceID) {
     return new _cloudwatch2.default().endTime(argv["end-time"]).duration(argv.duration || "1day").period(period).statistics(stats).metricStatistics(ns, instanceID, metricName).then(function (_ref) {
       var _ref2 = _slicedToArray(_ref, 2);

@@ -13,7 +13,7 @@ var _cloudwatch2 = _interopRequireDefault(_cloudwatch);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var argv = require("minimist")(process.argv.slice(2));
-var region = argv.region || process.env.AWS_DEFAULT_REGION || "ap-northeast-1";
+var region = argv.region || process.env.HUBOT_AWS_REGION || "ap-northeast-1";
 var namespace = argv.namespace || "AWS/EC2";
 
 _cloudwatch2.default.region(region).names().then(function (r) {

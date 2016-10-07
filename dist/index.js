@@ -36,7 +36,6 @@ function post(channel, args, callback) {
     return Promise.all([(0, _upload.upload)(channel, path), unlink(path)]);
   }).then(function (_ref) {
     var _ref2 = _slicedToArray(_ref, 2);
-
     var file = _ref2[0].file;
     var path = _ref2[1];
     return cb_ok(null, file);

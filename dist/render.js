@@ -11,6 +11,7 @@ var _procGenChart = require("./proc-gen-chart.js");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function render(args) {
+  //console.log(args)
   return (0, _printStats.print_stats)((0, _minimist2.default)(args)).then((0, _procGenChart.proc_gen_chart)(args));
 }
 

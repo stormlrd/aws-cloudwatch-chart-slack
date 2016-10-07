@@ -30,6 +30,7 @@ function describe_instances() {
   var filters = arguments.length <= 0 || arguments[0] === undefined ? [] : arguments[0];
 
   //AWS.config.update({region: "ap-northeast-1"})
+  _awsSdk2.default.config.update({ accessKeyId: process.env.HUBOT_AWS_ACCESS_KEY_ID, secretAccessKey: process.env.HUBOT_AWS_SECRET_ACCESS_KEY, region: argv.region || process.env.HUBOT_AWS_REGION || "ap-northeast-1" });
   var ec2 = new _awsSdk2.default.EC2();
   var params = {
     Filters: [{ Name: "instance-state-name", Values: ["running"] }].concat(_toConsumableArray(filters))
@@ -93,7 +94,12 @@ function ls_ec2(f) {
 
 if (require.main === module) {
   var argv = (0, _minimist2.default)(process.argv.slice(2));
-  _awsSdk2.default.config.update({ region: argv.region || process.env.AWS_DEFAULT_REGION || "ap-northeast-1" });
+//      aws.config.accessKeyId     = process.env.HUBOT_AWS_ACCESS_KEY_ID
+//    aws.config.secretAccessKey = process.env.HUBOT_AWS_SECRET_ACCESS_KEY
+//    aws.config.region          = process.env.HUBOT_AWS_REGION
+//    aws.config.update({accessKeyId: aws.config.accessKeyId, secretAccessKey: aws.config.secretAccessKey});
+
+  _awsSdk2.default.config.update({ accessKeyId: process.env.HUBOT_AWS_ACCESS_KEY_ID, secretAccessKey: process.env.HUBOT_AWS_SECRET_ACCESS_KEY, region: argv.region || process.env.HUBOT_AWS_REGION || "ap-northeast-1" });
   describe_instances(tag_string_to_filters(argv._[0])).then(function (r) {
     return console.log(JSON.stringify(r, null, 2));
   }).catch(function (err) {

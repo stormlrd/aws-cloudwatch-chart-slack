@@ -57,7 +57,7 @@ function ls_rds(f) {
 
 if (require.main === module) {
   var argv = (0, _minimist2.default)(process.argv.slice(2));
-  _awsSdk2.default.config.update({ region: argv.region || process.env.AWS_DEFAULT_REGION || "ap-northeast-1" });
+  _awsSdk2.default.config.update({ region: argv.region || process.env.HUBOT_AWS_REGION || "ap-northeast-1" });
   describe_db_instances(ec2.tag_string_to_filters(argv._[0])).then(function (r) {
     return console.log(JSON.stringify(r, null, 2));
   }).catch(function (err) {

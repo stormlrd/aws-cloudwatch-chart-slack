@@ -9,7 +9,9 @@ function upload(channel, path) {
   return new Promise(function (resolve, reject) {
     var form = new FormData();
     form.append("channels", channel);
-    form.append("token", process.env.SLACK_API_TOKEN);
+    form.append("token", process.env.HUBOT_SLACK_API_TOKEN);
+    console.log("token to use:"+ process.env.HUBOT_SLACK_API_TOKEN)
+    console.log("path to use:" + path)
     //form.append("file", fs.createReadStream(path));  //NOTE: This became to fail somehow suddenly... https://github.com/form-data/form-data#notes
     var buf = fs.readFileSync(path);
     form.append("file", buf, {
@@ -38,7 +40,7 @@ module.exports = {
 };
 
 if (require.main === module) {
-  var channel = process.env.SLACK_CHANNEL_NAME || "#api-test";
+  var channel = process.env.HUBOT_SLACK_CHANNEL_NAME || "#api-test";
   upload(channel, process.argv[2]).then(function (json) {
     return console.log(json);
   }).catch(function (err) {
